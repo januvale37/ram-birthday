@@ -195,7 +195,7 @@ setInterval(function(){
 
     const password=document.getElementById("password").value;
 
-    if(password==="Ram1808"){
+    if(password==="12132007"){
 
         document.getElementById("passwordScreen").style.display="none";
 
