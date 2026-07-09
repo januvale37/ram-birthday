@@ -191,6 +191,23 @@ setInterval(function(){
         heart.style.opacity="0";
 
     },100);
+    function checkPassword(){
+
+    const password=document.getElementById("password").value;
+
+    if(password==="Ram1808"){
+
+        document.getElementById("passwordScreen").style.display="none";
+
+    }
+
+    else{
+
+        document.getElementById("error").innerHTML="Wrong password ❤️";
+
+    }
+
+}
 
     setTimeout(function(){
 
