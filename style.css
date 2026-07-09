@@ -262,28 +262,26 @@ ENVELOPE
 
 #paper{
 
-    position:absolute;
 
-    left:25px;
+    background:#F5E6CC;   /* Vintage paper color */
 
-    right:25px;
+    color:#5C4033;        /* Brown text */
 
-    top:30px;
+    padding:40px;
 
-    background:#FFFDF7;
+    border-radius:20px;
 
-    padding:60px;
+    line-height:2;
 
-    border-radius:18px;
+    font-size:20px;
 
-    box-shadow:0 15px 45px rgba(0,0,0,.2);
+    font-family: "Times New Roman", Georgia, serif;
 
-    z-index:-1;
-
-    transition:2s;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
 
 }
 
+    
 .letter h1{
 
     text-align:center;
