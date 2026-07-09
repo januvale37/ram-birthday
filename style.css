@@ -1,1 +1,811 @@
+/* ===========================
+GENERAL
+=========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(135deg,#F3E8FF,#E9D5FF,#DDD6FE);
+
+    overflow-x:hidden;
+
+    color:#4B2E5E;
+
+}
+
+/* ===========================
+WELCOME SCREEN
+=========================== */
+
+#welcome{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+.welcome-card{
+
+    width:700px;
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(18px);
+
+    padding:60px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.welcome-card h3{
+
+    font-size:30px;
+
+    color:#8B5CF6;
+
+}
+
+.welcome-card h1{
+
+    font-size:65px;
+
+    margin-top:20px;
+
+}
+
+.welcome-card p{
+
+    margin-top:35px;
+
+    line-height:42px;
+
+    font-size:24px;
+
+}
+
+button{
+
+    margin-top:40px;
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    background:#8B5CF6;
+
+    color:white;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(139,92,246,.35);
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ===========================
+BIRTHDAY SCREEN
+=========================== */
+
+#birthday{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:60px;
+
+}
+
+.birthday-card{
+
+    width:750px;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:60px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+}
+
+.birthday-card h1{
+
+    font-size:70px;
+
+    color:#7C3AED;
+
+    animation:bounce 2s infinite;
+
+}
+
+.birthday-card h2{
+
+    margin-top:20px;
+
+    font-size:45px;
+
+    color:#C084FC;
+
+}
+
+.quote{
+
+    margin-top:30px;
+
+    font-size:24px;
+
+    line-height:40px;
+
+}
+
+/* ===========================
+ENVELOPE
+=========================== */
+
+#envelopeSection{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:80px;
+
+}
+
+#envelope{
+
+    width:720px;
+
+    margin:auto;
+
+    position:relative;
+
+}
+
+#cover{
+
+    background:linear-gradient(135deg,#C084FC,#8B5CF6);
+
+    height:250px;
+
+    border-radius:20px;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    cursor:pointer;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.2);
+
+    transition:.5s;
+
+}
+
+#cover:hover{
+
+    transform:scale(1.03);
+
+}
+
+#cover h2{
+
+    font-size:55px;
+
+}
+
+#cover h3{
+
+    font-size:34px;
+
+    margin-top:10px;
+
+}
+
+#cover p{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+}
+
+#paper{
+
+    position:absolute;
+
+    left:25px;
+
+    right:25px;
+
+    top:30px;
+
+    background:#FFFDF7;
+
+    padding:60px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.2);
+
+    z-index:-1;
+
+    transition:2s;
+
+}
+
+.letter h1{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    color:#7C3AED;
+
+}
+
+.letter p{
+
+    line-height:40px;
+
+    font-size:22px;
+
+    color:#444;
+
+    font-family:Georgia, serif;
+
+}
+/* =======================================
+PHOTO GALLERY
+======================================= */
+
+#gallery{
+
+    display:none;
+
+    min-height:100vh;
+
+    padding:80px 40px;
+
+    text-align:center;
+
+}
+
+#gallery h1{
+
+    font-size:55px;
+
+    color:#7C3AED;
+
+    margin-bottom:20px;
+
+}
+
+.galleryText{
+
+    font-size:24px;
+
+    color:#555;
+
+    margin-bottom:60px;
+
+    line-height:40px;
+
+}
+
+.photos{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:40px;
+
+}
+
+.photo{
+
+    width:280px;
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+.photo:hover{
+
+    transform:translateY(-12px) scale(1.05);
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+}
+
+.photo h3{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    color:#6D28D9;
+
+}
+
+/* =======================================
+FINAL MESSAGE
+======================================= */
+
+#final{
+
+    display:none;
+
+    min-height:100vh;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:50px;
+
+}
+
+.finalCard{
+
+    width:850px;
+
+    background:rgba(255,255,255,.6);
+
+    backdrop-filter:blur(18px);
+
+    padding:70px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.18);
+
+}
+
+.finalCard h1{
+
+    font-size:90px;
+
+    margin-bottom:30px;
+
+}
+
+.finalCard h2{
+
+    font-size:42px;
+
+    line-height:65px;
+
+    color:#7C3AED;
+
+}
+
+.finalCard p{
+
+    margin-top:40px;
+
+    font-size:25px;
+
+    line-height:40px;
+
+    color:#555;
+
+}
+
+/* =======================================
+ANIMATIONS
+======================================= */
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-18px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.welcome-card,
+.birthday-card,
+.finalCard,
+.photo{
+
+    animation:fadeIn 1.2s ease;
+
+}
+
+/* =======================================
+FLOATING HEARTS
+======================================= */
+
+body::before{
+
+content:"💜 💖 🤍 💜 💖";
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+font-size:28px;
+
+opacity:.12;
+
+animation:floatHearts 18s linear infinite;
+
+pointer-events:none;
+
+white-space:nowrap;
+
+}
+
+@keyframes floatHearts{
+
+0%{
+
+transform:translateY(100vh);
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+/* =======================================
+SCROLLBAR
+======================================= */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#A855F7;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#F3E8FF;
+
+}
+
+/* =======================================
+MOBILE RESPONSIVE
+======================================= */
+
+@media(max-width:768px){
+
+.welcome-card,
+.birthday-card,
+.finalCard{
+
+width:95%;
+
+padding:30px;
+
+}
+
+#paper{
+
+left:10px;
+
+right:10px;
+
+padding:30px;
+
+}
+
+#envelope{
+
+width:95%;
+
+}
+
+.welcome-card h1{
+
+font-size:45px;
+
+}
+
+.birthday-card h1{
+
+font-size:42px;
+
+}
+
+.birthday-card h2{
+
+font-size:34px;
+
+}
+
+.quote{
+
+font-size:20px;
+
+line-height:34px;
+
+}
+
+.letter p{
+
+font-size:18px;
+
+line-height:34px;
+
+}
+
+.photos{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.photo{
+
+width:90%;
+
+}
+
+.photo img{
+
+height:260px;
+
+}
+
+.finalCard h2{
+
+font-size:30px;
+
+line-height:50px;
+
+}
+
+}
+
+/* =======================================
+SMOOTH BUTTON GLOW
+======================================= */
+
+button{
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+box-shadow:0 0 10px rgba(192,132,252,.4);
+
+}
+
+to{
+
+box-shadow:0 0 30px rgba(192,132,252,.8);
+
+}
+
+}
+/* PASSWORD SCREEN */
+
+#passwordScreen{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(135deg,#c8b6ff,#e7c6ff,#ffd6e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.passwordBox{
+
+    background:white;
+
+    width:420px;
+
+    max-width:90%;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+
+}
+
+.passwordBox h1{
+
+    color:#8e44ad;
+
+    margin-bottom:20px;
+
+}
+
+.passwordBox p{
+
+    color:#555;
+
+    line-height:1.7;
+
+}
+
+.passwordBox input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:20px;
+
+    border-radius:12px;
+
+    border:2px solid #d8b4fe;
+
+    font-size:17px;
+
+}
+
+.passwordBox button{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#9d4edd;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.passwordBox button:hover{
+
+    background:#7b2cbf;
+
+}
+
+#error{
+
+    color:red;
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
